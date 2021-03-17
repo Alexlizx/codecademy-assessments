@@ -1,28 +1,15 @@
 # Write your code here
 
-# Optimized recursive solution to calculate `pow(x, n)`
-# using divide-and-conquer
-def myPow(x, n):
-    # base condition
-    if n == 0:
-        return 1
-    # calculate subproblem recursively
-    pow = myPow(x, n // 2)
- 
-    if n % 2 != 0:    # if `n` is odd
-        return x * pow * pow
-    else:             # otherwise, `n` is even
-        return pow * pow
+def generateFrame(n, gem):
+    frame = ""
 
-# Naive solution
-# def myPow(x, n):
-#     if n == 0:
-#         return 1
-#     elif n > 0:
-#         return x * myPow(x, n-1)
-#     else:
-#         return (1/x) * myPow(x, n+1)
+    if n <= 0:
+        return gem
 
-# Test code
-print(myPow(2, 3))
-print(myPow(-2, 3))
+    frame += "<"
+    frame += generateFrame(n-1, gem)
+    frame += ">"
+
+    return frame
+
+print(generateFrame(3, "Pearl"))
