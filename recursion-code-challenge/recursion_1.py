@@ -1,12 +1,17 @@
 # Write your code below
 def move_amber(gemstones):
+    result = []
     if len(gemstones) == 0:
-        return []
+        return result
+        
     if gemstones[0] == 'Amber':
-        return move_amber(gemstones[1:]) + gemstones[0:1]
+        result = move_amber(gemstones[1:])
+        result += gemstones[0:1]
     else:
-        return gemstones[0:1] + move_amber(gemstones[1:])
+        result = gemstones[0:1]
+        result += move_amber(gemstones[1:])
 
+    return result
 
 # Write your code below
 gemstones = ['Jade', 'Amber', 'Jade', 'Pearl', 'Sapphire', 'Amber', 'Sapphire', 'Sapphire', 'Sapphire', 'Pearl']
