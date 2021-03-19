@@ -13,8 +13,7 @@ def remove_gem(gemstones, i):
     if gemstones is None:
         return None
     if i == 0:
-        res = gemstones.next_node
-        return res
+        return gemstones.next_node
 
     gemstones.next_node = remove_gem(gemstones.next_node, i - 1)
     return gemstones
