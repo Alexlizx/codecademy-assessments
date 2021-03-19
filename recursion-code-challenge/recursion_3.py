@@ -1,15 +1,15 @@
 # Write your code here
 
 def wrap_gem(gemstone, n):
-    wrapped = ""
+    result = ""
 
     if n <= 0:
         return gemstone
 
-    wrapped += "<"
-    wrapped += wrap_gem(gemstone, n-1)
-    wrapped += ">"
+    result += "<"
+    result += wrap_gem(gemstone, n-1)
+    result += ">"
 
-    return wrapped
+    return result
 
 print(wrap_gem("Pearl", 3))
