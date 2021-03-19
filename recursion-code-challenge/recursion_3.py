@@ -1,15 +1,15 @@
 # Write your code here
 
-def generateFrame(n, gem):
-    frame = ""
+def wrap_gem(gemstone, n):
+    wrapped = ""
 
     if n <= 0:
-        return gem
+        return gemstone
 
-    frame += "<"
-    frame += generateFrame(n-1, gem)
-    frame += ">"
+    wrapped += "<"
+    wrapped += wrap_gem(gemstone, n-1)
+    wrapped += ">"
 
-    return frame
+    return wrapped
 
-print(generateFrame(3, "Pearl"))
+print(wrap_gem("Pearl", 3))
