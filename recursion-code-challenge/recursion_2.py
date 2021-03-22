@@ -21,13 +21,13 @@ def remove_gem(gemstones, i):
 
 # Behind the scene test code
 gemstone_list = ['Jade', 'Jade', 'Pearl', 'Sapphire', 'Sapphire', 'Sapphire', 'Sapphire', 'Pearl', 'Amber', 'Amber']
-container = gemstone.Gemstones()
 
-for gem in gemstone_list:
-    container.append(gem)
+container = gemstone.Gemstones()
+container.copy(gemstone_list)
 
 head = container.head
 head = remove_gem(head, 2)
+
 while head:
     print(head.value, end=' ')
     head = head.next_node

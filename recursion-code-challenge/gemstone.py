@@ -18,3 +18,8 @@ class Gemstones:
         while last.next_node:
             last = last.next_node
         last.next_node = temp
+    def copy(self, list):
+        for gem in list:
+            self.append(gem)
+
+        return self.head
