@@ -8,6 +8,12 @@ class Gemstone:
 class Gemstones:
     def __init__(self):
         self.head = None
+    def __init__(self, lst):
+        self.head = Gemstone(lst[0])
+        current = self.head
+        for val in lst[1:]:
+            current.next_node = Gemstone(val)
+            current = current.next_node
     def append(self, value):
         temp = Gemstone(value)
         if self.head is None:
@@ -18,8 +24,4 @@ class Gemstones:
         while last.next_node:
             last = last.next_node
         last.next_node = temp
-    def copy(self, list):
-        for gem in list:
-            self.append(gem)
-
-        return self.head
+        

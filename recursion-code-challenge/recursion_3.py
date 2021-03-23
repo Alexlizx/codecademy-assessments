@@ -1,15 +1,13 @@
-# Write your code here
-
 def wrap_gem(gemstone, n):
-    result = ""
+  result = ""
+  if n <= 0:
+    return gemstone
+  result += "<"
+  result += wrap_gem(gemstone, n-1)
+  result += ">"
 
-    if n <= 0:
-        return gemstone
+  return result
 
-    result += "<"
-    result += wrap_gem(gemstone, n-1)
-    result += ">"
-
-    return result
-
-print(wrap_gem("Pearl", 3))
+# Test code, you do not need to edit
+wrapped = wrap_gem("Pearl", 3)
+print(wrapped)
