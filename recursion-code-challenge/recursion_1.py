@@ -1,17 +1,17 @@
-def move_amber(gemstones):
+def move_to_end(lst, val):
   result = []
-  if len(gemstones) == 0:
+  if len(lst) == 0:
     return []
       
-  if gemstones[0] == 'Amber':
-    result = move_amber(gemstones[1:])
-    result += gemstones[0:1]
+  if lst[0] == val:
+    result = move_to_end(lst[1:], val)
+    result += lst[0:1]
   else:
-    result = gemstones[0:1]
-    result += move_amber(gemstones[1:])
+    result = lst[0:1]
+    result += move_to_end(lst[1:], val)
 
   return result
 
 # Test code, you do not need to edit
 gemstones = ["Amber", "Sapphire", "Amber", "Jade"]
-print(move_amber(gemstones))
+print(move_to_end(gemstones, "Amber"))
