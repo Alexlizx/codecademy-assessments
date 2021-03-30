@@ -7,16 +7,16 @@ import LinkedList
 #         self.next_node = next_node
 
 # Write your code here
-def remove_node(lst, i):
+def remove_node(head, i):
     if i < 0:
-        return lst
-    if lst is None:
+        return head
+    if head is None:
         return None
     if i == 0:
-        return lst.next_node
+        return head.next_node
 
-    lst.next_node = remove_node(lst.next_node, i - 1)
-    return lst
+    head.next_node = remove_node(head.next_node, i - 1)
+    return head
 
 
 # Test code, you don't need to edit
