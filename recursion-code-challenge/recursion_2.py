@@ -21,8 +21,6 @@ def remove_node(head, i):
 
 # Test code, you don't need to edit
 gemstones = LinkedList.LinkedList(["Amber", "Sapphire", "Jade", "Pearl"])
-
-head = gemstones.head
-head = remove_node(head, 1)
-head.flatten()
+head = remove_node(gemstones.head, 1)
+print(head.flatten())
 

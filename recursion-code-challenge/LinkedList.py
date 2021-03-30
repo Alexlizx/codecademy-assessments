@@ -5,12 +5,11 @@ class ListNode:
         self.next_node = next_node
     def flatten(self):
         temp = self
+        result = []
         while temp:
-            if temp.next_node:
-                print(temp.value, end='->')
-            else:
-                print(temp.value)
+            result.append(temp.value)
             temp = temp.next_node
+        return result
 
 # Behind the scene linked-list class
 class LinkedList:
@@ -32,4 +31,3 @@ class LinkedList:
         while last.next_node:
             last = last.next_node
         last.next_node = temp
-        
