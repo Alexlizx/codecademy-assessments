@@ -5,9 +5,9 @@ def move_to_end(lst, val):
       
   if lst[0] == val:
     result = move_to_end(lst[1:], val)
-    result += lst[0:1]
+    result.append(lst[0])
   else:
-    result = lst[0:1]
+    result.append(lst[0])
     result += move_to_end(lst[1:], val)
 
   return result
